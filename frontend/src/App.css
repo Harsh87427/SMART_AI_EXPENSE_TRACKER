@@ -1,0 +1,154 @@
+:root {
+  --bg-dark: #0f172a;
+  --card-bg: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --accent: #3b82f6;
+  --border: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+/* Header */
+.header { margin-bottom: 2rem; }
+.header h1 { 
+    font-size: 2rem; 
+    margin: 0; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px;
+    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.subtitle { color: var(--text-secondary); margin-top: 5px; }
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.card-icon { color: var(--accent); }
+.stat-card h3 { margin: 0; font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;}
+
+.stat-value { font-size: 2rem; font-weight: 700; margin: 0; }
+
+.input-wrapper { display: flex; align-items: center; font-size: 2rem; font-weight: 700; }
+.input-wrapper input { 
+    background: transparent; border: none; color: white; 
+    font-size: 2rem; font-weight: 700; width: 100%; outline: none;
+}
+
+/* Main Layout */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .main-grid { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+
+h2 { margin-top: 0; font-size: 1.2rem; margin-bottom: 1.5rem; }
+
+/* Inputs */
+.modern-input {
+  width: 100%;
+  padding: 1rem;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 0.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.modern-input:focus { border-color: var(--accent); outline: none; }
+
+.amount-row { display: flex; gap: 10px; }
+.currency-input { position: relative; flex: 1; display: flex; align-items: center; }
+.currency-input span { position: absolute; left: 15px; color: var(--text-secondary); z-index: 10; font-weight: bold;}
+.modern-input.amount { padding-left: 35px; margin-bottom: 0; }
+
+.add-btn {
+  background: var(--accent);
+  border: none;
+  color: white;
+  padding: 0 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background 0.2s;
+}
+.add-btn:hover { background: #2563eb; }
+.add-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+
+/* List */
+.expense-scroll { max-height: 400px; overflow-y: auto; padding-right: 5px; }
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  transition: transform 0.2s;
+}
+.transaction-item:hover { transform: translateX(5px); background: rgba(255, 255, 255, 0.05); }
+
+.left-side { display: flex; align-items: center; gap: 1rem; }
+.category-dot { width: 12px; height: 12px; border-radius: 50%; }
+
+/* Dynamic Colors */
+.category-dot.food { background: #FF6384; box-shadow: 0 0 10px rgba(255, 99, 132, 0.5); }
+.category-dot.transportation { background: #36A2EB; box-shadow: 0 0 10px rgba(54, 162, 235, 0.5); }
+.category-dot.utilities { background: #FFCE56; }
+.category-dot.entertainment { background: #9966FF; }
+.category-dot.misc { background: #C9CBCF; }
+
+.details { display: flex; flex-direction: column; }
+.desc { font-weight: 500; font-size: 1rem; }
+.cat-badge { font-size: 0.75rem; color: var(--text-secondary); }
+
+.amount { font-weight: 600; color: #ef4444; font-size: 1rem; }
+.empty-state { text-align: center; color: var(--text-secondary); padding: 2rem; font-style: italic; }

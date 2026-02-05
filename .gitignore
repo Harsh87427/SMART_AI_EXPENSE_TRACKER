@@ -1,0 +1,11 @@
+# Ignore Python secrets & cache
+__pycache__/
+venv/
+.env
+*.pyc
+
+# Ignore Node modules (too heavy)
+node_modules/
+dist/
+.DS_Store.env
+.env
