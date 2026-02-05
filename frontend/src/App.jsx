@@ -5,7 +5,7 @@ import { Wallet, TrendingUp, PlusCircle, CreditCard, DollarSign, Trash2, Mic } f
 import ExpenseChart from "./components/ExpenseChart";
 import "./App.css";
 
-const API_URL = "http://127.0.0.1:5000";
+const API_URL = "https://smart-ai-expense-tracker.onrender.com/";
 
 function App() {
   const [expenses, setExpenses] = useState([]);
